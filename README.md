@@ -29,3 +29,24 @@ css.serialize(0)
     }
  */
 ```
+  
+### `css.escape(selectorText)` 
+  
+The polyfill of [CSS.escape](https://drafts.csswg.org/cssom/#the-css.escape%28%29-method).  
+  
+Example:  
+```js
+css.escape('#()[]{}')
+// => '\#\(\)\[\]\{\}'
+```                  
+Now look at this HTML element:
+```html
+<div id="#()[]{}"></div>
+```     
+Get this HTML element by selector:
+```js
+document.querySelector('#' + '#()[]{}')
+// => Error: '##()[]{}' is not a valid selector
+
+document.querySelector('#' + css.escape('#()[]{}'))
+```
