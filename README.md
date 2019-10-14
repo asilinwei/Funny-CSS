@@ -47,6 +47,4 @@ Get this HTML element by selector:
 ```js
 document.querySelector('#' + '#()[]{}')
 // => Error: '##()[]{}' is not a valid selector
-
-document.querySelector('#' + css.escape('#()[]{}'))
 ```
